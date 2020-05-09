@@ -16,6 +16,8 @@ export default class CookBookComponent extends Component {
         }
 
         this.selectedRecipe = this.selectedRecipe.bind(this);
+        this.submit = this.submit.bind(this);
+
     }
 
     onChange = (e) => {
@@ -39,18 +41,16 @@ export default class CookBookComponent extends Component {
         }
     }
 
-    submit = (e) => {
-        e.preventDefault();
+    submit(name, steps) {
         let data = {
-            name: this.state.name,
-            steps: this.state.steps,
+            name: name,
+            steps: steps,
         }
-        if (e.key !== 'Enter')
-            this.setState({
-                list: [...this.state.list, data],
-                name: '',
-                steps: []
-            })
+        this.setState({
+            list: [...this.state.list, data],
+            name: '',
+            steps: []
+        })
     }
 
     _handleKeyDown = (e) => {
