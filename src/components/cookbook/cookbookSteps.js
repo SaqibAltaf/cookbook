@@ -39,7 +39,7 @@ export default function CookBookSteps(props) {
     return (
         <Row>
             <Col>
-                <label>Recipe Name: </label>
+                <label>Recipe-Name: </label>
                 <input type="text" name="name" className='form-control' onChange={(e) => setName(e.target.value)} value={name} />
 
                 <label>Steps: (Press Enter to Add Step)</label>
